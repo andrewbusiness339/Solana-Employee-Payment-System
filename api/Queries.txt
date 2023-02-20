@@ -1,0 +1,72 @@
+mutation createWallet {
+  createWallet(
+    project: "D2"
+  ) {
+    project
+    secretKey
+  }
+}
+
+query getWallets {
+  getWallets {  
+    project
+    secretKey
+  }
+}
+
+mutation createClaimer {
+  createClaimer(
+    project: "D2",
+    name: "Anton",
+    amount: "0.1",
+    wallet: "9QWrrm6zRL3zGuRYh9GzzWuCHJeEiSmJGn1pr8ELn7no"
+    time: "12358234342"
+  ) {
+    project
+    name
+    amount
+    wallet
+    time
+    transactionHash
+    createdAt
+  }
+}
+
+query getClaimers {
+  getClaimers {
+    project
+    name
+    amount
+    wallet
+    time
+    transactionHash
+    createdAt
+  }
+}
+
+query getClaimer {
+  getClaimer(wallet: "9QWrrm6zRL3zGuRYh9GzzWuCHJeEiSmJGn1pr8ELn7no") {
+    project
+    name
+    amount
+    wallet
+    time
+    transactionHash
+    createdAt
+  }
+}
+
+mutation clickClaim {
+  clickClaim(
+    project: "D2",
+    wallet: "9QWrrm6zRL3zGuRYh9GzzWuCHJeEiSmJGn1pr8ELn7no",
+  ) {
+    project
+    name
+    amount
+    wallet
+    time
+    transactionHash
+    createdAt
+  }
+}
